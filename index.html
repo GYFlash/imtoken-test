@@ -4,56 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Title</title>
-  <script src='https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js'></script>
-  <script>
-    window.web3 = new Web3(window.ethereum)
-    window.ethereum.enable().then(accounts => {
-      window.accounts = accounts
-    })
-  </script>
 </head>
 <body>
-<button onclick="pay">充值</button>
-<script>
-  function pay() {
-    var params = {
-      to: '0xD9bcf1e096e1C4adD0d587c1E9c620C1072326d4',
-      from: window.accounts[0],
-      value: '1250000000000000',
-      orderInfo: 'buy a cup of coffee',
-      feeCustomizable: true
-    };
-
-    imToken.callAPI('transaction.tokenPay', params, function (err, hash) {
-      if (err) {
-        alert(err)
-      } else {
-        alert(hash)
-      }
-    })
-  }
-</script>
-<script>
-  window.alert = function (str) {
-    imToken.callAPI('native.toastInfo', JSON.stringify(str));
-  }
-
-
-  // var sections = document.querySelectorAll('section')
-  // var buttons = document.querySelectorAll('button')
-  // var pres = document.querySelectorAll('pre')
-  //
-  // for (var i = 0; i < buttons.length; i++) {
-  //   var button = buttons[i];
-  //   buttons[i].onclick = (function (j) {
-  //     return function () {
-  //       var code = pres[j].innerHTML
-  //       var script = document.createElement('script')
-  //       script.innerHTML = code
-  //       document.head.appendChild(script)
-  //     }
-  //   }(i))
-  // }
-</script>
+<a href="./imtoken.html">imtoken</a>
+<a href="./my.html">我的</a>
 </body>
 </html>
