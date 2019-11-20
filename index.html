@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="pay">充值</button>
+<script>
+  function pay() {
+    var params = {
+      to: '0xD9bcf1e096e1C4adD0d587c1E9c620C1072326d4',
+      from: window.accounts[0],
+      value: '1250000000000000',
+      orderInfo: 'buy a cup of coffee',
+      feeCustomizable: true
+    };
+
+    imToken.callAPI('transaction.tokenPay', params, function (err, hash) {
+      if (err) {
+        alert(err)
+      } else {
+        alert(hash)
+      }
+    })
+  }
+</script>
+</body>
+</html>
